@@ -1,0 +1,74 @@
+.post-container {
+  border-bottom: 1px solid black;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.post-container .post {
+  height: 300px;
+  overflow: hidden;
+}
+
+.post-container .post .image-box {
+  max-width: 50%;
+  background-color: black;
+  color: white;
+  float: left;
+  margin: 0 20px 10px 0;
+  width: auto;
+}
+
+.post-container .post .image-box > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.post-container .post .image-box > a img {
+  width: 100%;
+}
+
+.post-container .post .image-box .caption {
+  text-align: center;
+}
+
+.post-container .post .image-box .caption p {
+  margin: 0;
+}
+
+.post-container .post ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 20px;
+}
+
+.post-container .read-more-button-wrapper {
+  padding-bottom: 20px;
+}
+
+.post-container .read-more-button-wrapper.closed {
+  height: 80px;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(70%, #fff), to(transparent));
+  background-image: linear-gradient(to top, #fff 70%, transparent);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .post-container .post .featured-image {
+    max-width: 100%;
+  }
+}
+/*# sourceMappingURL=post.css.map */

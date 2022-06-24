@@ -1,0 +1,181 @@
+#root {
+    height: 100%;
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+
+    nav,
+    main #content {
+        max-width: 900px;
+    }
+
+    main {
+        flex: 1;
+        overflow: auto;
+
+        #content {
+            min-height: 100%;
+            box-sizing: border-box;
+            background-color: #fff;
+            margin: auto;
+            padding: 40px clamp(15px, 5vw, 80px);
+
+            &.external {
+                display: flex;
+                padding: 0;
+
+                iframe {
+                    width: 100%;
+                    border: 0;
+                }
+            }
+        }
+    }
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+
+    h1 {
+        margin: 0.75rem;
+    }
+}
+
+nav {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 0 20px;
+    margin: auto;
+
+    .tab-label {
+        height: 45px;
+        min-width: 300px;
+        border-bottom: 0;
+        border-radius: 10px 10px 0 0;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        gap: 10px;
+        padding: 8px;
+        white-space: nowrap;
+
+        &.not-showing,
+        select {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &.project {
+            background-color: antiquewhite;
+        }
+
+        &.documentation {
+            background-color: lavender;
+        }
+
+        &.not-showing {
+            background-color: #aaa;
+        }
+
+        &.showing {
+            background-color: #fff;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+    }
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+a {
+    &:hover {
+        color: #555;
+    }
+}
+
+label {
+    position: relative;
+
+    select {
+        appearance: none;
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1.5px solid black;
+        font-family: "Oxygen", sans-serif;
+        font-size: 1rem;
+        font-weight: 300;
+        z-index: 2;
+
+        &,
+        option {
+            padding: 2px 1.5rem 2px 5px;
+        }
+    }
+
+    .select-arrow {
+        font-size: 1.5rem;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+    }
+}
+
+.project-description {
+    background-color: #ccc;
+    border-radius: 10px;
+    padding: 0 20px;
+
+    p {
+        display: inline-block;
+    }
+}
+
+.button-link,
+button {
+    background: #000;
+    border-radius: 8px;
+    border: 0;
+    color: white;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding: 5px 10px;
+    text-decoration: none;
+
+    &:hover {
+        background-color: #555;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+.mushroom-image {
+    height: auto;
+    max-height: 400px;
+    max-width: 100%;
+    width: autо;
+}
+
+.error-message {
+    color: maroon;
+}

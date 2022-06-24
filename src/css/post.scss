@@ -1,0 +1,65 @@
+.post-container {
+    border-bottom: 1px solid black;
+    margin-bottom: 40px;
+    position: relative;
+
+    .post {
+        height: 300px;
+        overflow: hidden;
+
+        .image-box {
+            max-width: 50%;
+            background-color: black;
+            color: white;
+            float: left;
+            margin: 0 20px 10px 0;
+            width: auto;
+
+            & > a {
+                display: flex;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .caption {
+                text-align: center;
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            padding-left: 20px;
+        }
+    }
+
+    .read-more-button-wrapper {
+        padding-bottom: 20px;
+
+        &.closed {
+            height: 80px;
+            width: 100%;
+            background-image: linear-gradient(to top, #fff 70%, transparent);
+            display: flex;
+            align-items: flex-end;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .post-container {
+        .post {
+            .featured-image {
+                max-width: 100%;
+            }
+        }
+    }
+}
