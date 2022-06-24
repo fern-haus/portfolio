@@ -13,7 +13,7 @@ const projects = {
         "The Hungry Ghost": {
             project_url: "https://fern.haus/blog",
             wp_category: undefined,
-            github_url: "https://github.com/fern-haus/dharma-gem",
+            github_url: "https://github.com/fern-haus/hungry-ghost",
         },
         "Ascend Tree Service": {
             project_url: "https://fern.haus/projects/ascend",
@@ -30,19 +30,19 @@ const projects = {
         },
         "Arcana Database": {
             project_url: "https://fern.haus/arcana",
-            wp_category: 65,
-            github: "https://github.com/fern-haus/arcana-database",
+            wp_category: undefined,
+            github_url: "https://github.com/fern-haus/arcana-database",
         },
         "Mushroom Finder": {
             project_url: "https://fern.haus/mushroom",
-            wp_category: 63,
+            wp_category: undefined,
             github_url: "https://github.com/fern-haus/mushroom-finder",
         },
         "Workout Timer": {
             project_url: "https://fern.haus/projects/workout",
             wp_category: undefined,
             // move to fern-haus
-            github_url: "https://github.com/alecjf/workout",
+            github_url: "https://github.com/alecjf/workout-timer",
         },
     },
 };
