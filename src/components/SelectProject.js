@@ -49,33 +49,29 @@ const projects = {
 
 // add data to projects object
 function getAllDocumentation(projects) {
-    Object.values(projects)
-        .slice(1)
-        .forEach((v) =>
-            Object.values(v).forEach((value) => {
-                // get posts:
-                fetchHelper(
-                    "https://fern.haus/blog/wp-json/wp/v2/posts?categories=" +
-                        value.wp_category +
-                        "&_embed"
-                )
-                    .then((data) => (value.documentation = data))
-                    .catch(
-                        (err) => (value.documentation = { error: err.message })
-                    );
-                // get description:
-                fetchHelper(
-                    "https://fern.haus/blog/wp-json/wp/v2/categories?include=" +
-                        value.wp_category
-                )
-                    .then(
-                        (data) => (value.description = data?.[0]?.description)
-                    )
-                    .catch(
-                        (err) => (value.description = { error: err.message })
-                    );
-            })
-        );
+    const values = [
+        projects["Home"],
+        ...Object.values(projects)
+            .slice(1)
+            .map((v) => Object.values(v)),
+    ].flat();
+    values.forEach((value) => {
+        // get posts:
+        fetchHelper(
+            "https://fern.haus/blog/wp-json/wp/v2/posts?categories=" +
+                value.wp_category +
+                "&_embed"
+        )
+            .then((data) => (value.documentation = data))
+            .catch((err) => (value.documentation = { error: err.message }));
+        // get description:
+        fetchHelper(
+            "https://fern.haus/blog/wp-json/wp/v2/categories?include=" +
+                value.wp_category
+        )
+            .then((data) => (value.description = data?.[0]?.description))
+            .catch((err) => (value.description = { error: err.message }));
+    });
 }
 
 function fetchHelper(url) {

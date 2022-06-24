@@ -1,9 +1,9 @@
-import { projects } from "./SelectProject";
 import { getProjectObject } from "./Project";
 import Post from "./Post";
 
 export default function Documentation({ project }) {
-    const { description, documentation, github } = getProjectObject(project);
+    const { description, documentation, github_url } =
+        getProjectObject(project);
 
     function displayDescription(description) {
         const display = getDisplayType(description);
@@ -52,11 +52,11 @@ export default function Documentation({ project }) {
             <h1>{project}</h1>
             <h2>
                 Documentation
-                {github && (
+                {github_url && (
                     <>
                         {" "}
                         <a
-                            href={`https://github.com/fern-haus/${github}`}
+                            href={github_url}
                             target="_blank"
                             rel="noreferrer"
                             className="button-link"
