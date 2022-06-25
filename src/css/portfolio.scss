@@ -135,8 +135,19 @@ label {
     .select-arrow {
         font-size: 1.5rem;
         position: absolute;
-        right: 0;
         z-index: 1;
+
+        &.arrow-with-new-tab {
+            right: 24px;
+        }
+
+        &.arrow-without-new-tab {
+            right: 0;
+        }
+    }
+
+    .open-new-tab {
+        text-decoration: none;
     }
 }
 

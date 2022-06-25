@@ -175,8 +175,19 @@ label select option {
 label .select-arrow {
   font-size: 1.5rem;
   position: absolute;
-  right: 0;
   z-index: 1;
+}
+
+label .select-arrow.arrow-with-new-tab {
+  right: 24px;
+}
+
+label .select-arrow.arrow-without-new-tab {
+  right: 0;
+}
+
+label .open-new-tab {
+  text-decoration: none;
 }
 
 .project-description {

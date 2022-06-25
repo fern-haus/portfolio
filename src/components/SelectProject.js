@@ -7,17 +7,17 @@ const projects = {
     "Multi-Page Sites": {
         "Prova Lab": {
             project_url: "https://provalabsocialinnovation.com",
-            wp_category: undefined,
+            wp_category: 67,
             github_url: "https://github.com/fern-haus/prova-lab",
         },
         "The Hungry Ghost": {
             project_url: "https://fern.haus/blog",
-            wp_category: undefined,
+            wp_category: 69,
             github_url: "https://github.com/fern-haus/hungry-ghost",
         },
         "Ascend Tree Service": {
             project_url: "https://fern.haus/projects/ascend",
-            wp_category: undefined,
+            wp_category: 71,
             // move to fern-haus
             github_url: "https://github.com/alecjf/ascend",
         },
@@ -30,17 +30,17 @@ const projects = {
         },
         "Arcana Database": {
             project_url: "https://fern.haus/arcana",
-            wp_category: undefined,
+            wp_category: 72,
             github_url: "https://github.com/fern-haus/arcana-database",
         },
         "Mushroom Finder": {
             project_url: "https://fern.haus/mushroom",
-            wp_category: undefined,
+            wp_category: 63,
             github_url: "https://github.com/fern-haus/mushroom-finder",
         },
         "Workout Timer": {
             project_url: "https://fern.haus/projects/workout",
-            wp_category: undefined,
+            wp_category: 73,
             // move to fern-haus
             github_url: "https://github.com/alecjf/workout-timer",
         },

@@ -1,3 +1,5 @@
+import { getProjectObject } from "./Project";
+
 export default function Tab({
     project,
     selectProject,
@@ -7,7 +9,8 @@ export default function Tab({
 }) {
     const isShowing = type === showing,
         isProject = type === "project",
-        isDocs = type === "documentation";
+        isDocs = type === "documentation",
+        showNewTabLink = showing === "project" && project !== "Home";
 
     return (
         <div
@@ -26,7 +29,23 @@ export default function Tab({
                         <></>
                     )}
                     {selectProject}
-                    <span className="select-arrow">{"\u25BE"}</span>
+                    <span
+                        className={`select-arrow arrow-${
+                            showNewTabLink ? "with-new-tab" : "without-new-tab"
+                        }`}
+                    >
+                        {"\u25BE"}
+                    </span>
+                    {showNewTabLink && (
+                        <a
+                            className="open-new-tab"
+                            href={getProjectObject(project).project_url}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            {"\u29C9"}
+                        </a>
+                    )}
                 </label>
             ) : (
                 <>
