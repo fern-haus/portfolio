@@ -2,7 +2,7 @@ import "../css/portfolio.css";
 import { useEffect, useState } from "react";
 import Documentation from "./Documentation";
 import Project from "./Project";
-import SelectProject from "./SelectProject";
+import SelectProject, { projects, getAllDocumentation } from "./SelectProject";
 import Tab from "./Tab";
 
 function tabHandler() {
@@ -31,7 +31,8 @@ function getProjectParam() {
 }
 
 export default function Portfolio() {
-    const [project, setProject] = useState(getProjectParam() || "Home"),
+    const [isLoaded, setIsLoaded] = useState(false),
+        [project, setProject] = useState(getProjectParam() || "Home"),
         [showing, setShowing] = useState("project"),
         selectProject = <SelectProject {...{ project, setProject }} />,
         TabBuilder = ({ type }) => (
@@ -39,6 +40,10 @@ export default function Portfolio() {
         );
 
     useEffect(tabHandler);
+
+    useEffect(() => {
+        getAllDocumentation(projects).then((resp) => setIsLoaded(true));
+    }, []);
 
     return (
         <>
@@ -62,7 +67,7 @@ export default function Portfolio() {
                         <Project {...{ project, setProject }} />
                     )}
                     {showing === "documentation" && (
-                        <Documentation {...{ project }} />
+                        <Documentation {...{ project, isLoaded }} />
                     )}
                 </div>
             </main>

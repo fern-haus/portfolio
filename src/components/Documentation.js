@@ -1,7 +1,7 @@
 import { getProjectObject } from "./Project";
 import Post from "./Post";
 
-export default function Documentation({ project }) {
+export default function Documentation({ project, isLoaded }) {
     const { description, documentation, github_url } =
         getProjectObject(project);
 
@@ -66,8 +66,24 @@ export default function Documentation({ project }) {
                     </>
                 )}
             </h2>
-            {displayDescription(description)}
-            {displayDocumentation(documentation)}
+            {isLoaded ? (
+                <>
+                    {displayDescription(description)}
+                    {displayDocumentation(documentation)}
+                </>
+            ) : (
+                <p>
+                    Getting all projects' documentation from{" "}
+                    <a
+                        href="https://fern.haus/blog"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        The Hungry Ghost
+                    </a>
+                    ...
+                </p>
+            )}
             {/* <pre>{JSON.stringify(documentation, null, 4)}</pre> */}
         </>
     );

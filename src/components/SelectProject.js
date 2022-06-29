@@ -55,23 +55,34 @@ function getAllDocumentation(projects) {
             .slice(1)
             .map((v) => Object.values(v)),
     ].flat();
-    values.forEach((value) => {
-        // get posts:
-        fetchHelper(
-            "https://fern.haus/blog/wp-json/wp/v2/posts?categories=" +
-                value.wp_category +
-                "&_embed"
-        )
-            .then((data) => (value.documentation = data))
-            .catch((err) => (value.documentation = { error: err.message }));
-        // get description:
-        fetchHelper(
-            "https://fern.haus/blog/wp-json/wp/v2/categories?include=" +
-                value.wp_category
-        )
-            .then((data) => (value.description = data?.[0]?.description))
-            .catch((err) => (value.description = { error: err.message }));
-    });
+    return Promise.all(
+        values
+            .map((value) => {
+                // get posts:
+                const promise1 = fetchHelper(
+                    "https://fern.haus/blog/wp-json/wp/v2/posts?categories=" +
+                        value.wp_category +
+                        "&_embed"
+                )
+                    .then((data) => (value.documentation = data))
+                    .catch(
+                        (err) => (value.documentation = { error: err.message })
+                    );
+                // get description:
+                const promise2 = fetchHelper(
+                    "https://fern.haus/blog/wp-json/wp/v2/categories?include=" +
+                        value.wp_category
+                )
+                    .then(
+                        (data) => (value.description = data?.[0]?.description)
+                    )
+                    .catch(
+                        (err) => (value.description = { error: err.message })
+                    );
+                return [promise1, promise2];
+            })
+            .flat()
+    );
 }
 
 function fetchHelper(url) {
@@ -85,8 +96,6 @@ function fetchHelper(url) {
             }
         });
 }
-
-getAllDocumentation(projects);
 
 export default function SelectProject({ project, setProject }) {
     return (
@@ -113,4 +122,4 @@ export default function SelectProject({ project, setProject }) {
     );
 }
 
-export { projects };
+export { projects, getAllDocumentation };
