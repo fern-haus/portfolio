@@ -5,7 +5,7 @@ export default function Project({ project, setProject }) {
     const { project_url } = getProjectObject(project);
 
     return project_url ? (
-        <iframe src={project_url} title={project} />
+        <iframe src={project_url} title={project} allow="geolocation" />
     ) : (
         <Home {...{ setProject }} />
     );
