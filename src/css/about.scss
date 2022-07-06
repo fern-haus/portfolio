@@ -1,0 +1,26 @@
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .selfie {
+            height: 200px;
+            width: auto;
+            border-radius: 50%;
+        }
+
+        .info {
+            min-width: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

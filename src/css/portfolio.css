@@ -1,5 +1,5 @@
 @charset "UTF-8";
-#root {
+#portfolio {
   height: 100%;
   background-color: #ccc;
   display: -webkit-box;
@@ -11,51 +11,29 @@
           flex-direction: column;
 }
 
-#root nav,
-#root main #content {
-  max-width: 900px;
-}
-
-#root main {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  overflow: auto;
-}
-
-#root main #content {
-  min-height: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: #fff;
-  margin: auto;
-  padding: 40px clamp(15px, 5vw, 80px);
-}
-
-#root main #content.external {
+#portfolio header {
+  background-color: #000;
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0;
-}
-
-#root main #content.external iframe {
-  width: 100%;
-  border: 0;
-}
-
-header {
-  background-color: #000;
-  color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-bottom: 20px;
   text-align: center;
 }
 
-header h1 {
+#portfolio header h1 {
   margin: 0.75rem;
 }
 
-nav {
+#portfolio nav {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -71,7 +49,7 @@ nav {
   margin: auto;
 }
 
-nav .tab-label {
+#portfolio nav .tab-label {
   height: 45px;
   min-width: 330px;
   border-bottom: 0;
@@ -95,28 +73,28 @@ nav .tab-label {
   white-space: nowrap;
 }
 
-nav .tab-label.not-showing:hover,
-nav .tab-label select:hover {
+#portfolio nav .tab-label.not-showing:hover,
+#portfolio nav .tab-label select:hover {
   cursor: pointer;
 }
 
-nav .tab-label.project {
+#portfolio nav .tab-label.project {
   background-color: antiquewhite;
 }
 
-nav .tab-label.documentation {
+#portfolio nav .tab-label.documentation {
   background-color: lavender;
 }
 
-nav .tab-label.not-showing {
+#portfolio nav .tab-label.not-showing {
   background-color: #aaa;
 }
 
-nav .tab-label.showing {
+#portfolio nav .tab-label.showing {
   background-color: #fff;
 }
 
-nav .tab-label label {
+#portfolio nav .tab-label label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -127,9 +105,83 @@ nav .tab-label label {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 8px;
+  position: relative;
 }
 
-#home {
+#portfolio nav .tab-label label select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1.5px solid black;
+  font-family: "Oxygen", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  z-index: 2;
+}
+
+#portfolio nav .tab-label label select,
+#portfolio nav .tab-label label select option {
+  padding: 2px 1.5rem 2px 5px;
+}
+
+#portfolio nav .tab-label label .select-arrow {
+  font-size: 1.5rem;
+  position: absolute;
+  z-index: 1;
+}
+
+#portfolio nav .tab-label label .select-arrow.arrow-with-new-tab {
+  right: 24px;
+}
+
+#portfolio nav .tab-label label .select-arrow.arrow-without-new-tab {
+  right: 0;
+}
+
+#portfolio nav .tab-label label .open-new-tab {
+  text-decoration: none;
+}
+
+#portfolio nav,
+#portfolio main #content {
+  max-width: 900px;
+}
+
+#portfolio main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow: auto;
+}
+
+#portfolio main #content {
+  min-height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  margin: auto;
+  padding: 40px clamp(15px, 5vw, 80px);
+}
+
+#portfolio main #content.has-iframe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+
+#portfolio main #content.has-iframe iframe {
+  width: 100%;
+  border: 0;
+}
+
+#portfolio main #content a:hover {
+  color: #555;
+}
+
+#portfolio main #content #home {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -146,62 +198,18 @@ nav .tab-label label {
   gap: 30px;
 }
 
-a:hover {
-  color: #555;
-}
-
-label {
-  position: relative;
-}
-
-label select {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background-color: transparent;
-  border: 0;
-  border-bottom: 1.5px solid black;
-  font-family: "Oxygen", sans-serif;
-  font-size: 1rem;
-  font-weight: 300;
-  z-index: 2;
-}
-
-label select,
-label select option {
-  padding: 2px 1.5rem 2px 5px;
-}
-
-label .select-arrow {
-  font-size: 1.5rem;
-  position: absolute;
-  z-index: 1;
-}
-
-label .select-arrow.arrow-with-new-tab {
-  right: 24px;
-}
-
-label .select-arrow.arrow-without-new-tab {
-  right: 0;
-}
-
-label .open-new-tab {
-  text-decoration: none;
-}
-
-.project-description {
+#portfolio main #content .project-description {
   background-color: #ccc;
   border-radius: 10px;
   padding: 0 20px;
 }
 
-.project-description p {
+#portfolio main #content .project-description p {
   display: inline-block;
 }
 
-.button-link,
-button {
+#portfolio main #content .button-link,
+#portfolio main #content button {
   background: #000;
   border-radius: 8px;
   border: 0;
@@ -213,21 +221,21 @@ button {
   text-decoration: none;
 }
 
-.button-link:hover,
-button:hover {
+#portfolio main #content .button-link:hover,
+#portfolio main #content button:hover {
   background-color: #555;
   color: white;
   cursor: pointer;
 }
 
-.mushroom-image {
+#portfolio main #content .mushroom-image {
   height: auto;
   max-height: 400px;
   max-width: 100%;
   width: autо;
 }
 
-.error-message {
+#portfolio main #content .error-message {
   color: maroon;
 }
 /*# sourceMappingURL=portfolio.css.map */

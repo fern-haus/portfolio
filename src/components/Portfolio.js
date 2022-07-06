@@ -4,6 +4,7 @@ import Documentation from "./Documentation";
 import Project from "./Project";
 import SelectProject, { projects, getAllDocumentation } from "./SelectProject";
 import Tab from "./Tab";
+import ScrollButton from "./ScrollButton";
 
 function tabHandler() {
     const tabs = [...document.getElementsByClassName("tab-label")].sort(
@@ -46,9 +47,11 @@ export default function Portfolio() {
     }, []);
 
     return (
-        <>
+        <div id="portfolio">
             <header>
                 <h1>Alec Fernandes</h1>
+                <ScrollButton id="landing" text="Landing" />
+                <ScrollButton id="about" text="About" />
             </header>
             <nav>
                 <TabBuilder type="project" />
@@ -59,7 +62,7 @@ export default function Portfolio() {
                     id="content"
                     className={
                         project !== "Home" && showing === "project"
-                            ? "external"
+                            ? "has-iframe"
                             : ""
                     }
                 >
@@ -71,6 +74,6 @@ export default function Portfolio() {
                     )}
                 </div>
             </main>
-        </>
+        </div>
     );
 }

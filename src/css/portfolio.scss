@@ -1,8 +1,113 @@
-#root {
+#portfolio {
     height: 100%;
     background-color: #ccc;
     display: flex;
     flex-direction: column;
+
+    header {
+        background-color: #000;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        text-align: center;
+
+        h1 {
+            margin: 0.75rem;
+        }
+    }
+
+    nav {
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 0 20px;
+        margin: auto;
+
+        .tab-label {
+            height: 45px;
+            min-width: 330px;
+            border-bottom: 0;
+            border-radius: 10px 10px 0 0;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            gap: 10px;
+            padding: 8px;
+            white-space: nowrap;
+
+            &.not-showing,
+            select {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            &.project {
+                background-color: antiquewhite;
+            }
+
+            &.documentation {
+                background-color: lavender;
+            }
+
+            &.not-showing {
+                background-color: #aaa;
+            }
+
+            &.showing {
+                background-color: #fff;
+            }
+
+            label {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                position: relative;
+
+                select {
+                    appearance: none;
+                    background-color: transparent;
+                    border: 0;
+                    border-bottom: 1.5px solid black;
+                    font-family: "Oxygen", sans-serif;
+                    font-size: 1rem;
+                    font-weight: 300;
+                    z-index: 2;
+
+                    &,
+                    option {
+                        padding: 2px 1.5rem 2px 5px;
+                    }
+                }
+
+                .select-arrow {
+                    font-size: 1.5rem;
+                    position: absolute;
+                    z-index: 1;
+
+                    &.arrow-with-new-tab {
+                        right: 24px;
+                    }
+
+                    &.arrow-without-new-tab {
+                        right: 0;
+                    }
+                }
+
+                .open-new-tab {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
 
     nav,
     main #content {
@@ -20,7 +125,7 @@
             margin: auto;
             padding: 40px clamp(15px, 5vw, 80px);
 
-            &.external {
+            &.has-iframe {
                 display: flex;
                 padding: 0;
 
@@ -29,164 +134,60 @@
                     border: 0;
                 }
             }
-        }
-    }
-}
 
-header {
-    background-color: #000;
-    color: #fff;
-    margin-bottom: 20px;
-    text-align: center;
+            a {
+                &:hover {
+                    color: #555;
+                }
+            }
 
-    h1 {
-        margin: 0.75rem;
-    }
-}
+            #home {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+            }
 
-nav {
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 0 20px;
-    margin: auto;
+            .project-description {
+                background-color: #ccc;
+                border-radius: 10px;
+                padding: 0 20px;
 
-    .tab-label {
-        height: 45px;
-        min-width: 330px;
-        border-bottom: 0;
-        border-radius: 10px 10px 0 0;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex: 1;
-        gap: 10px;
-        padding: 8px;
-        white-space: nowrap;
+                p {
+                    display: inline-block;
+                }
+            }
 
-        &.not-showing,
-        select {
-            &:hover {
-                cursor: pointer;
+            .button-link,
+            button {
+                background: #000;
+                border-radius: 8px;
+                border: 0;
+                color: white;
+                display: inline-block;
+                font-size: 1.1rem;
+                font-weight: 400;
+                padding: 5px 10px;
+                text-decoration: none;
+
+                &:hover {
+                    background-color: #555;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+
+            .mushroom-image {
+                height: auto;
+                max-height: 400px;
+                max-width: 100%;
+                width: autо;
+            }
+
+            .error-message {
+                color: maroon;
             }
         }
-
-        &.project {
-            background-color: antiquewhite;
-        }
-
-        &.documentation {
-            background-color: lavender;
-        }
-
-        &.not-showing {
-            background-color: #aaa;
-        }
-
-        &.showing {
-            background-color: #fff;
-        }
-
-        label {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
     }
-}
-
-#home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-}
-
-a {
-    &:hover {
-        color: #555;
-    }
-}
-
-label {
-    position: relative;
-
-    select {
-        appearance: none;
-        background-color: transparent;
-        border: 0;
-        border-bottom: 1.5px solid black;
-        font-family: "Oxygen", sans-serif;
-        font-size: 1rem;
-        font-weight: 300;
-        z-index: 2;
-
-        &,
-        option {
-            padding: 2px 1.5rem 2px 5px;
-        }
-    }
-
-    .select-arrow {
-        font-size: 1.5rem;
-        position: absolute;
-        z-index: 1;
-
-        &.arrow-with-new-tab {
-            right: 24px;
-        }
-
-        &.arrow-without-new-tab {
-            right: 0;
-        }
-    }
-
-    .open-new-tab {
-        text-decoration: none;
-    }
-}
-
-.project-description {
-    background-color: #ccc;
-    border-radius: 10px;
-    padding: 0 20px;
-
-    p {
-        display: inline-block;
-    }
-}
-
-.button-link,
-button {
-    background: #000;
-    border-radius: 8px;
-    border: 0;
-    color: white;
-    display: inline-block;
-    font-size: 1.1rem;
-    font-weight: 400;
-    padding: 5px 10px;
-    text-decoration: none;
-
-    &:hover {
-        background-color: #555;
-        color: white;
-        cursor: pointer;
-    }
-}
-
-.mushroom-image {
-    height: auto;
-    max-height: 400px;
-    max-width: 100%;
-    width: autо;
-}
-
-.error-message {
-    color: maroon;
 }

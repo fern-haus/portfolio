@@ -1,13 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import "./css/index.css";
 import Portfolio from "./components/Portfolio";
 import reportWebVitals from "./reportWebVitals";
+import Landing from "./components/Landing";
+import About from "./components/About";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
+        <Landing />
         <Portfolio />
+        <About />
     </React.StrictMode>
 );
 
