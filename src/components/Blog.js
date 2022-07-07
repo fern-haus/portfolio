@@ -1,24 +1,24 @@
 import "../css/blog.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { projects } from "./SelectProject";
 import Post from "./Post";
 
 export default function Blog() {
     const [posts, setPosts] = useState();
 
-    function getProjectIDsRecursiveHelper(value, result) {
-        value.wp_category
-            ? result.push(value.wp_category)
-            : Object.values(value).forEach((value) =>
-                  getProjectIDsRecursiveHelper(value, result)
-              );
+    useEffect(getAllCategories, [getAllCategories]);
+
+    function getProjectIDsRecursiveHelper(obj, result) {
+        Object.values(obj).forEach((value) =>
+            value.wp_category
+                ? result.push(value.wp_category)
+                : getProjectIDsRecursiveHelper(value, result)
+        );
     }
 
     function getProjectIDsRecursive() {
         const result = [];
-        Object.values(projects).forEach((value) =>
-            getProjectIDsRecursiveHelper(value, result)
-        );
+        getProjectIDsRecursiveHelper(projects, result);
         return result;
     }
 
@@ -41,8 +41,6 @@ export default function Blog() {
                     .then((json) => setPosts(json))
             );
     }
-
-    getAllCategories();
 
     return (
         <div id="blog">
