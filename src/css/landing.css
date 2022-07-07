@@ -9,7 +9,9 @@
 }
 
 #landing .content-container {
-  height: 54.40217vw;
+  --img-ratio: 1144/736;
+  --container-height: calc(35vw * var(--img-ratio));
+  height: var(--container-height);
   max-height: 100vh;
   width: 100%;
   position: relative;
@@ -33,8 +35,8 @@
 
 #landing .content-container #malachite {
   width: 35vw;
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: calc(50% - var(--container-height) / 2);
   right: 0;
   z-index: 2;
 }
@@ -80,7 +82,7 @@
 }
 
 #landing .content-container nav button:hover {
-  color: #000;
+  color: #ccc;
   cursor: pointer;
 }
 /*# sourceMappingURL=landing.css.map */

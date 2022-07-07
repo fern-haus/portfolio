@@ -6,7 +6,9 @@
 
 .post-container .post {
   height: 300px;
+  background-color: rgba(255, 255, 255, 0.8);
   overflow: hidden;
+  padding: 0 15px;
 }
 
 .post-container .post .image-box {
@@ -56,12 +58,15 @@
   width: 100%;
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(70%, #fff), to(transparent));
   background-image: linear-gradient(to top, #fff 70%, transparent);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  padding-left: 15px;
   position: absolute;
   bottom: 0;
 }

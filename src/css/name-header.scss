@@ -1,0 +1,55 @@
+.name-header {
+    width: 100%;
+    background-color: #000;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-family: "Khand", sans-serif;
+    gap: 10px;
+    // margin-bottom: 20px;
+    padding: 15px;
+    text-align: center;
+
+    h1 {
+        font-size: 2.4rem;
+        font-weight: 400;
+        margin: 0 0.75rem;
+        line-height: 2.4rem;
+        position: relative;
+        top: 4px;
+    }
+
+    nav {
+        display: flex;
+        gap: 20px;
+
+        h2 {
+            margin: 0;
+        }
+
+        h2,
+        button {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        button {
+            appearance: none;
+            -webkit-appearance: none;
+            background-color: transparent;
+            border: 0;
+            color: #96f9ed;
+            font-family: "Khand", sans-serif;
+            padding: 0;
+
+            &:hover {
+                color: #269587;
+                cursor: pointer;
+            }
+        }
+    }
+}

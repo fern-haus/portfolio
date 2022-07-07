@@ -2,6 +2,7 @@ import "../css/blog.css";
 import { useEffect, useState } from "react";
 import { projects } from "./SelectProject";
 import Post from "./Post";
+import NameHeader from "./NameHeader";
 
 export default function Blog() {
     const [posts, setPosts] = useState();
@@ -44,12 +45,19 @@ export default function Blog() {
 
     return (
         <div id="blog">
-            {posts ? (
-                // <pre>{JSON.stringify(posts, null, 4)}</pre>
-                posts.map((post) => <Post {...{ key: post.id, post }} />)
-            ) : (
-                <p>Loading posts...</p>
-            )}
+            <NameHeader section="blog" />
+            <div id="posts-container">
+                <div id="posts">
+                    {posts ? (
+                        // <pre>{JSON.stringify(posts, null, 4)}</pre>
+                        posts.map((post) => (
+                            <Post {...{ key: post.id, post }} />
+                        ))
+                    ) : (
+                        <p>Loading posts...</p>
+                    )}
+                </div>
+            </div>
         </div>
     );
 }

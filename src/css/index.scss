@@ -20,7 +20,6 @@ html {
         z-index: 2;
     }
 
-    #landing,
     #blog,
     #portfolio,
     #about {
@@ -28,6 +27,7 @@ html {
     }
 
     body {
+        background-color: #eee;
         margin: 0;
         font-family: "Oxygen", -apple-system, BlinkMacSystemFont, "Segoe UI",
             "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
@@ -38,6 +38,32 @@ html {
 
         #root {
             overflow: hidden;
+
+            a {
+                color: #269587;
+
+                &:hover {
+                    color: #1e5f5b;
+                }
+            }
+
+            .button-link {
+                background: #000;
+                border-radius: 8px;
+                border: 0;
+                color: white;
+                display: inline-block;
+                font-size: 1.1rem;
+                font-weight: 400;
+                padding: 5px 10px;
+                text-decoration: none;
+
+                &:hover {
+                    background-color: #555;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
 
             code {
                 font-family: source-code-pro, Menlo, Monaco, Consolas,

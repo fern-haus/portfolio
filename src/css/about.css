@@ -24,18 +24,30 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  gap: 0 30px;
+  overflow: auto;
 }
 
 #about .row .selfie {
   height: 200px;
   width: auto;
   border-radius: 50%;
+  margin: 30px 0;
 }
 
 #about .row .info {
+  max-width: 700px;
   min-width: 350px;
+  width: 50vw;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,5 +57,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 20px;
 }
 /*# sourceMappingURL=about.css.map */

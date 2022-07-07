@@ -75,7 +75,10 @@ export default function Post({ post }) {
                     isExpanded ? "open" : "closed"
                 }`}
             >
-                <button onClick={() => readMoreHandler(post)}>
+                <button
+                    className="button-link"
+                    onClick={() => readMoreHandler(post)}
+                >
                     {isExpanded ? "close" : "read more"}
                 </button>
             </div>

@@ -1,7 +1,6 @@
 @charset "UTF-8";
 #portfolio {
   height: 100%;
-  background-color: #ccc;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,29 +10,7 @@
           flex-direction: column;
 }
 
-#portfolio header {
-  background-color: #000;
-  color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-#portfolio header h1 {
-  margin: 0.75rem;
-}
-
-#portfolio nav {
+#portfolio > nav {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -49,7 +26,7 @@
   margin: auto;
 }
 
-#portfolio nav .tab-label {
+#portfolio > nav .tab-label {
   height: 45px;
   min-width: 330px;
   border-bottom: 0;
@@ -73,28 +50,28 @@
   white-space: nowrap;
 }
 
-#portfolio nav .tab-label.not-showing:hover,
-#portfolio nav .tab-label select:hover {
+#portfolio > nav .tab-label.not-showing:hover,
+#portfolio > nav .tab-label select:hover {
   cursor: pointer;
 }
 
-#portfolio nav .tab-label.project {
+#portfolio > nav .tab-label.project {
   background-color: antiquewhite;
 }
 
-#portfolio nav .tab-label.documentation {
+#portfolio > nav .tab-label.documentation {
   background-color: lavender;
 }
 
-#portfolio nav .tab-label.not-showing {
+#portfolio > nav .tab-label.not-showing {
   background-color: #aaa;
 }
 
-#portfolio nav .tab-label.showing {
+#portfolio > nav .tab-label.showing {
   background-color: #fff;
 }
 
-#portfolio nav .tab-label label {
+#portfolio > nav .tab-label label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,7 +85,7 @@
   position: relative;
 }
 
-#portfolio nav .tab-label label select {
+#portfolio > nav .tab-label label select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -121,30 +98,30 @@
   z-index: 2;
 }
 
-#portfolio nav .tab-label label select,
-#portfolio nav .tab-label label select option {
+#portfolio > nav .tab-label label select,
+#portfolio > nav .tab-label label select option {
   padding: 2px 1.5rem 2px 5px;
 }
 
-#portfolio nav .tab-label label .select-arrow {
+#portfolio > nav .tab-label label .select-arrow {
   font-size: 1.5rem;
   position: absolute;
   z-index: 1;
 }
 
-#portfolio nav .tab-label label .select-arrow.arrow-with-new-tab {
+#portfolio > nav .tab-label label .select-arrow.arrow-with-new-tab {
   right: 24px;
 }
 
-#portfolio nav .tab-label label .select-arrow.arrow-without-new-tab {
+#portfolio > nav .tab-label label .select-arrow.arrow-without-new-tab {
   right: 0;
 }
 
-#portfolio nav .tab-label label .open-new-tab {
+#portfolio > nav .tab-label label .open-new-tab {
   text-decoration: none;
 }
 
-#portfolio nav,
+#portfolio > nav,
 #portfolio main #content {
   max-width: 900px;
 }
@@ -206,26 +183,6 @@
 
 #portfolio main #content .project-description p {
   display: inline-block;
-}
-
-#portfolio main #content .button-link,
-#portfolio main #content button {
-  background: #000;
-  border-radius: 8px;
-  border: 0;
-  color: white;
-  display: inline-block;
-  font-size: 1.1rem;
-  font-weight: 400;
-  padding: 5px 10px;
-  text-decoration: none;
-}
-
-#portfolio main #content .button-link:hover,
-#portfolio main #content button:hover {
-  background-color: #555;
-  color: white;
-  cursor: pointer;
 }
 
 #portfolio main #content .mushroom-image {
