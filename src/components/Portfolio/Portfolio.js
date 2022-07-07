@@ -1,4 +1,4 @@
-import "../css/portfolio.css";
+import "../../css/portfolio.css";
 import { useEffect, useState } from "react";
 import Documentation from "./Documentation";
 import Project from "./Project";

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Landing from "./Landing";
 import NameHeader from "./NameHeader";
 import Blog from "./Blog";
-import Portfolio from "./Portfolio";
+import Portfolio from "./Portfolio/Portfolio";
 import About from "./About";
 
 export default function App() {

@@ -60,12 +60,18 @@ html body #root a:hover {
   color: #1e5f5b;
 }
 
+html body #root blockquote,
+html body #root ul {
+  display: inline-block;
+}
+
 html body #root .button-link {
   background: #000;
   border-radius: 8px;
   border: 0;
   color: white;
   display: inline-block;
+  font-family: "Khand", sans-serif;
   font-size: 1.1rem;
   font-weight: 400;
   padding: 5px 10px;

@@ -51,6 +51,7 @@
 
 .post-container .read-more-button-wrapper {
   padding-bottom: 20px;
+  padding-left: 15px;
 }
 
 .post-container .read-more-button-wrapper.closed {
@@ -66,9 +67,12 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  padding-left: 15px;
   position: absolute;
   bottom: 0;
+}
+
+.post-container .read-more-button-wrapper.open {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 @media only screen and (max-width: 600px) {

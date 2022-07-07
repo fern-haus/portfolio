@@ -1,5 +1,5 @@
 import { getProjectObject } from "./Project";
-import Post from "./Post";
+import Post from "../Post";
 
 export default function Documentation({ project, isLoaded }) {
     const { description, documentation, github_url } =

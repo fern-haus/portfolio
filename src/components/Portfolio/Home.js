@@ -14,6 +14,7 @@ export default function Home({ setProject }) {
                             (projectName) => (
                                 <button
                                     key={`homepage button for ${projectName}`}
+                                    className="button-link"
                                     onClick={() => setProject(projectName)}
                                 >
                                     {projectName}

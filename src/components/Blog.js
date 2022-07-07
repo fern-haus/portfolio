@@ -1,6 +1,6 @@
 import "../css/blog.css";
 import { useEffect, useState } from "react";
-import { projects } from "./SelectProject";
+import { projects } from "./Portfolio/SelectProject";
 import Post from "./Post";
 
 export default function Blog() {
