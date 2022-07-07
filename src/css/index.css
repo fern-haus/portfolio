@@ -3,9 +3,26 @@ html,
 html body,
 html #root,
 html #landing,
+html #blog,
 html #portfolio,
 html #about {
   height: 100%;
+  position: relative;
+}
+
+html #landing {
+  z-index: 1;
+}
+
+html #root > * {
+  z-index: 2;
+}
+
+html #landing,
+html #blog,
+html #portfolio,
+html #about {
+  overflow: auto;
 }
 
 html body {

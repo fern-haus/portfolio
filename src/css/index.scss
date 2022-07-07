@@ -5,9 +5,26 @@ html {
     body,
     #root,
     #landing,
+    #blog,
     #portfolio,
     #about {
         height: 100%;
+        position: relative;
+    }
+
+    #landing {
+        z-index: 1;
+    }
+
+    #root > * {
+        z-index: 2;
+    }
+
+    #landing,
+    #blog,
+    #portfolio,
+    #about {
+        overflow: auto;
     }
 
     body {

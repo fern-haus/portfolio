@@ -1,5 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Khand:wght@300;400&display=swap");
+
 #landing {
-    h1 {
-        display: inline-block;
+    display: flex;
+    align-items: center;
+
+    .content-container {
+        $img-ratio: 1144/736;
+
+        height: 35vw * $img-ratio;
+        max-height: 100vh;
+        width: 100%;
+        position: relative;
+
+        h1,
+        nav {
+            padding-left: 15vw;
+        }
+
+        h1 {
+            display: inline-block;
+            font-family: "Khand", sans-serif;
+            font-size: 8vw;
+            font-weight: 400 !important;
+            line-height: 8vw;
+            margin: 4vw 0;
+            position: relative;
+            top: 0.5vw;
+        }
+
+        #malachite {
+            width: 35vw;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+        }
+
+        nav {
+            height: 4vw;
+            background-image: linear-gradient(
+                90deg,
+                #0d2b2d 0%,
+                #3cbdae 62.7%,
+                #5edccd 100%,
+                rgba(94, 220, 205, 0) 100%
+            );
+            display: flex;
+            align-items: center;
+            gap: 4vw;
+
+            &:first-child {
+                position: relative;
+                z-index: 1;
+            }
+
+            &:last-child {
+                opacity: 0.5;
+                position: relative;
+                top: 4vw;
+                z-index: 3;
+            }
+
+            button {
+                appearance: none;
+                -webkit-appearance: none;
+                background: transparent;
+                border: 0;
+                color: #fff;
+                font-family: "Khand", sans-serif;
+                font-size: 2.5vw;
+                font-weight: 400 !important;
+                line-height: 2.5vw;
+                position: relative;
+                top: 0.2vw;
+
+                &:hover {
+                    color: #000;
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }

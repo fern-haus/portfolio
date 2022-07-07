@@ -1,4 +1,86 @@
-#landing h1 {
+@import url("https://fonts.googleapis.com/css2?family=Khand:wght@300;400&display=swap");
+#landing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#landing .content-container {
+  height: 54.40217vw;
+  max-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+#landing .content-container h1,
+#landing .content-container nav {
+  padding-left: 15vw;
+}
+
+#landing .content-container h1 {
   display: inline-block;
+  font-family: "Khand", sans-serif;
+  font-size: 8vw;
+  font-weight: 400 !important;
+  line-height: 8vw;
+  margin: 4vw 0;
+  position: relative;
+  top: 0.5vw;
+}
+
+#landing .content-container #malachite {
+  width: 35vw;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+#landing .content-container nav {
+  height: 4vw;
+  background-image: -webkit-gradient(linear, left top, right top, from(#0d2b2d), color-stop(62.7%, #3cbdae), color-stop(100%, #5edccd), to(rgba(94, 220, 205, 0)));
+  background-image: linear-gradient(90deg, #0d2b2d 0%, #3cbdae 62.7%, #5edccd 100%, rgba(94, 220, 205, 0) 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4vw;
+}
+
+#landing .content-container nav:first-child {
+  position: relative;
+  z-index: 1;
+}
+
+#landing .content-container nav:last-child {
+  opacity: 0.5;
+  position: relative;
+  top: 4vw;
+  z-index: 3;
+}
+
+#landing .content-container nav button {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-family: "Khand", sans-serif;
+  font-size: 2.5vw;
+  font-weight: 400 !important;
+  line-height: 2.5vw;
+  position: relative;
+  top: 0.2vw;
+}
+
+#landing .content-container nav button:hover {
+  color: #000;
+  cursor: pointer;
 }
 /*# sourceMappingURL=landing.css.map */

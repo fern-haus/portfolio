@@ -4,12 +4,14 @@ import "./css/index.css";
 import Portfolio from "./components/Portfolio";
 import reportWebVitals from "./reportWebVitals";
 import Landing from "./components/Landing";
+import Blog from "./components/Blog";
 import About from "./components/About";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
         <Landing />
+        <Blog />
         <Portfolio />
         <About />
     </React.StrictMode>

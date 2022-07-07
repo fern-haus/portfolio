@@ -16,7 +16,9 @@ function tabHandler() {
         }),
         yPositions = new Set(tabs.map((tab) => tab.offsetTop)),
         areStacked = yPositions.size > 1,
-        navElem = document.getElementsByTagName("nav")[0];
+        navElem = document
+            .getElementById("portfolio")
+            .getElementsByTagName("nav")[0];
     navElem.style.flexWrap =
         areStacked && isProjectTabShowing ? "wrap-reverse" : "wrap";
     navElem.style.backgroundImage = areStacked
