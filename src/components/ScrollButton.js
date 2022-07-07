@@ -1,8 +1,16 @@
-export default function ScrollButton({ id, text }) {
+export default function ScrollButton({ id, text, setSection }) {
     function scrollHandler(id) {
-        document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-        document.getElementById("malachite").style.position =
-            id === "home" ? "absolute" : "fixed";
+        setSection(id);
+        const nameHeader = document.getElementById("name-header");
+        if (id === "landing") {
+            nameHeader.style.opacity = 0;
+            // css transition set at 1s,
+            // (display none after opacity change to remove elem)
+            setTimeout(() => (nameHeader.style.display = "none"), 1000);
+        } else {
+            nameHeader.style.display = "flex";
+            setTimeout(() => (nameHeader.style.opacity = 1), 500);
+        }
     }
 
     return <button onClick={() => scrollHandler(id)}>{text}</button>;

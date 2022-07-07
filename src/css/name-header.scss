@@ -1,9 +1,10 @@
-.name-header {
+#name-header {
+    height: var(--header-height);
     width: 100%;
     background-color: #000;
     box-sizing: border-box;
     color: #fff;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -11,8 +12,12 @@
     font-family: "Khand", sans-serif;
     gap: 10px;
     // margin-bottom: 20px;
+    opacity: 0;
     padding: 15px;
+    position: fixed;
+    top: 0;
     text-align: center;
+    transition: 1s;
 
     h1 {
         font-size: 2.4rem;

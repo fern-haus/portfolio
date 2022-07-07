@@ -1,12 +1,11 @@
-.name-header {
+#name-header {
+  height: var(--header-height);
   width: 100%;
   background-color: #000;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -21,11 +20,16 @@
       flex-wrap: wrap;
   font-family: "Khand", sans-serif;
   gap: 10px;
+  opacity: 0;
   padding: 15px;
+  position: fixed;
+  top: 0;
   text-align: center;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
-.name-header h1 {
+#name-header h1 {
   font-size: 2.4rem;
   font-weight: 400;
   margin: 0 0.75rem;
@@ -34,24 +38,24 @@
   top: 4px;
 }
 
-.name-header nav {
+#name-header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
 }
 
-.name-header nav h2 {
+#name-header nav h2 {
   margin: 0;
 }
 
-.name-header nav h2,
-.name-header nav button {
+#name-header nav h2,
+#name-header nav button {
   color: white;
   font-size: 1.2rem;
 }
 
-.name-header nav button {
+#name-header nav button {
   -moz-appearance: none;
        appearance: none;
   -webkit-appearance: none;
@@ -62,7 +66,7 @@
   padding: 0;
 }
 
-.name-header nav button:hover {
+#name-header nav button:hover {
   color: #269587;
   cursor: pointer;
 }

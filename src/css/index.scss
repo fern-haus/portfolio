@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap");
 
+:root {
+    --header-height: 110px;
+}
+
 html {
     &,
     body,
@@ -9,6 +13,7 @@ html {
     #portfolio,
     #about {
         height: 100%;
+        box-sizing: border-box;
         position: relative;
     }
 
@@ -16,18 +21,27 @@ html {
         z-index: 1;
     }
 
-    #root > * {
+    #name-header {
+        z-index: 3;
+    }
+
+    #root > *:not(#landing):not(#name-header) {
         z-index: 2;
     }
 
     #blog,
     #portfolio,
     #about {
+        padding-top: var(--header-height);
         overflow: auto;
     }
 
+    #landing,
     body {
         background-color: #eee;
+    }
+
+    body {
         margin: 0;
         font-family: "Oxygen", -apple-system, BlinkMacSystemFont, "Segoe UI",
             "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",

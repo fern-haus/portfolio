@@ -1,11 +1,9 @@
 import "../css/about.css";
 import selfie from "../assets/me.jpg";
-import NameHeader from "./NameHeader";
 
 export default function About() {
     return (
         <div id="about">
-            <NameHeader section="about" />
             <div className="row">
                 <img
                     className="selfie"

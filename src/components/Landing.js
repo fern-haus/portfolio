@@ -2,7 +2,7 @@ import "../css/landing.css";
 import ScrollButton from "./ScrollButton";
 import malachite from "../assets/malachite-transparent.png";
 
-export default function Landing() {
+export default function Landing({ setSection }) {
     return (
         <div id="landing">
             <div className="content-container">
@@ -18,9 +18,15 @@ export default function Landing() {
                     alt="cross-section of malachite stone"
                 />
                 <nav>
-                    <ScrollButton id="blog" text="Blog" />
-                    <ScrollButton id="portfolio" text="Portfolio" />
-                    <ScrollButton id="about" text="About" />
+                    <ScrollButton
+                        {...{ setSection, id: "blog", text: "Blog" }}
+                    />
+                    <ScrollButton
+                        {...{ setSection, id: "portfolio", text: "Portfolio" }}
+                    />
+                    <ScrollButton
+                        {...{ setSection, id: "about", text: "About Me" }}
+                    />
                 </nav>
                 <nav></nav>
             </div>

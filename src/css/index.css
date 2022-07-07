@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap");
+:root {
+  --header-height: 110px;
+}
+
 html,
 html body,
 html #root,
@@ -7,6 +11,8 @@ html #blog,
 html #portfolio,
 html #about {
   height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   position: relative;
 }
 
@@ -14,20 +20,29 @@ html #landing {
   z-index: 1;
 }
 
-html #root > * {
+html #name-header {
+  z-index: 3;
+}
+
+html #root > *:not(#landing):not(#name-header) {
   z-index: 2;
 }
 
 html #blog,
 html #portfolio,
 html #about {
+  padding-top: var(--header-height);
   overflow: auto;
 }
 
+html #landing,
 html body {
   background-color: #eee;
+}
+
+html body {
   margin: 0;
-  font-family: "Oxygen", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Oxygen", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -64,6 +79,6 @@ html body #root .button-link:hover {
 }
 
 html body #root code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 /*# sourceMappingURL=index.css.map */
