@@ -1,45 +1,16 @@
 import "../css/blog.css";
 import { useEffect, useState } from "react";
-import { projects } from "./Portfolio/SelectProject";
 import Post from "./Post";
 
 export default function Blog() {
     const [posts, setPosts] = useState();
 
-    useEffect(getAllCategories, [getAllCategories]);
+    useEffect(getPosts, [getPosts]);
 
-    function getProjectIDsRecursiveHelper(obj, result) {
-        Object.values(obj).forEach((value) =>
-            value.wp_category
-                ? result.push(value.wp_category)
-                : getProjectIDsRecursiveHelper(value, result)
-        );
-    }
-
-    function getProjectIDsRecursive() {
-        const result = [];
-        getProjectIDsRecursiveHelper(projects, result);
-        return result;
-    }
-
-    function getAllCategories() {
-        const projectCatIDs = getProjectIDsRecursive();
-        fetch("https://fern.haus/blog/wp-json/wp/v2/categories")
-            .then((res) => res.json())
-            .then((categories) =>
-                categories
-                    .map((cat) => cat.id)
-                    .filter((id) => !projectCatIDs.includes(id))
-            )
-            .then((nonProjectIDs) =>
-                fetch(
-                    `https://fern.haus/blog/wp-json/wp/v2/posts?categories=${nonProjectIDs.join(
-                        ","
-                    )}&_embed`
-                )
-                    .then((data) => data.json())
-                    .then((json) => setPosts(json))
-            );
+    function getPosts() {
+        fetch(`https://fern.haus/blog/wp-json/wp/v2/posts?_embed`)
+            .then((data) => data.json())
+            .then((json) => setPosts(json));
     }
 
     return (
@@ -49,7 +20,9 @@ export default function Blog() {
                     {posts ? (
                         // <pre>{JSON.stringify(posts, null, 4)}</pre>
                         posts.map((post) => (
-                            <Post {...{ key: post.id, post }} />
+                            <Post
+                                {...{ key: post.id, post, isTitleLinked: true }}
+                            />
                         ))
                     ) : (
                         <p>Loading posts...</p>

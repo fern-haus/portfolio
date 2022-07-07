@@ -26,7 +26,7 @@ function dateFormatter(str) {
     return `${months[m]} ${d}, ${y} @ ${h}:${min}`;
 }
 
-export default function Post({ post }) {
+export default function Post({ post, isTitleLinked }) {
     const [isExpanded, setIsExpanded] = useState(false),
         image = post?._embedded?.["wp:featuredmedia"]?.["0"];
 
@@ -39,9 +39,13 @@ export default function Post({ post }) {
     return (
         <div className="post-container">
             <article className="post" id={post.id}>
-                <a href={post.link} target="_blank" rel="noreferrer">
+                {isTitleLinked ? (
+                    <a href={post.link} target="_blank" rel="noreferrer">
+                        <h3>{post.title.rendered}</h3>
+                    </a>
+                ) : (
                     <h3>{post.title.rendered}</h3>
-                </a>
+                )}
                 <p>{dateFormatter(post.date)}</p>
                 {image && (
                     <div className="image-box">

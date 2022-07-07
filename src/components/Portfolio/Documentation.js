@@ -28,7 +28,7 @@ export default function Documentation({ project, isLoaded }) {
         const display = getDisplayType(documentation);
         return display === "success"
             ? documentation?.map?.((post) => (
-                  <Post {...{ key: post.id, post }} />
+                  <Post {...{ key: post.id, post, isTitleLinked: false }} />
               ))
             : displayErrorOrLoading(display, "documentation", documentation);
     }
