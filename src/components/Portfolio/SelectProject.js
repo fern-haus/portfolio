@@ -1,23 +1,23 @@
 const projects = {
     Home: {
         project_url: null,
-        wp_category: 66,
+        wp_category: 118,
         github_url: "https://github.com/fern-haus/portfolio",
     },
     "Multi-Page Sites": {
         "Prova Lab": {
             project_url: "https://provalabsocialinnovation.com",
-            wp_category: 67,
+            wp_category: 116,
             github_url: "https://github.com/fern-haus/prova-lab",
         },
         "The Hungry Ghost": {
             project_url: "https://fern.haus/blog",
-            wp_category: 69,
+            wp_category: 117,
             github_url: "https://github.com/fern-haus/hungry-ghost",
         },
         "Ascend Tree Service": {
             project_url: "https://fern.haus/projects/ascend",
-            wp_category: 71,
+            wp_category: 115,
             // move to fern-haus
             github_url: "https://github.com/alecjf/ascend",
         },
@@ -25,22 +25,22 @@ const projects = {
     "Single Page Apps": {
         "Dharma Gem": {
             project_url: "https://fern.haus/gem",
-            wp_category: 65,
+            wp_category: 121,
             github_url: "https://github.com/fern-haus/dharma-gem",
         },
         "Arcana Database": {
             project_url: "https://fern.haus/arcana",
-            wp_category: 72,
+            wp_category: 120,
             github_url: "https://github.com/fern-haus/arcana-database",
         },
         "Mushroom Finder": {
             project_url: "https://fern.haus/mushroom",
-            wp_category: 63,
+            wp_category: 122,
             github_url: "https://github.com/fern-haus/mushroom-finder",
         },
         "Workout Timer": {
             project_url: "https://fern.haus/projects/workout",
-            wp_category: 73,
+            wp_category: 123,
             // move to fern-haus
             github_url: "https://github.com/alecjf/workout-timer",
         },
@@ -60,7 +60,7 @@ function getAllDocumentation(projects) {
             .map((value) => {
                 // get posts:
                 const promise1 = fetchHelper(
-                    "https://fern.haus/blog/wp-json/wp/v2/posts?categories=" +
+                    "https://fern.haus/wp-json/wp/v2/posts?categories=" +
                         value.wp_category +
                         "&_embed"
                 )
@@ -70,7 +70,7 @@ function getAllDocumentation(projects) {
                     );
                 // get description:
                 const promise2 = fetchHelper(
-                    "https://fern.haus/blog/wp-json/wp/v2/categories?include=" +
+                    "https://fern.haus/wp-json/wp/v2/categories?include=" +
                         value.wp_category
                 )
                     .then(
