@@ -66,7 +66,7 @@ html body #root ul {
 }
 
 html body #root .button-link {
-  background: #000;
+  background-color: #000;
   border-radius: 8px;
   border: 0;
   color: white;
@@ -80,7 +80,7 @@ html body #root .button-link {
 
 html body #root .button-link:hover {
   background-color: #555;
-  color: white;
+  color: white !important;
   cursor: pointer;
 }
 

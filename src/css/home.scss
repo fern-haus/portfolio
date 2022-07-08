@@ -1,0 +1,33 @@
+#home {
+    h1,
+    h2 {
+        font-family: "Khand", sans-serif;
+        margin: 0;
+    }
+
+    .project-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+
+        button {
+            height: 100px;
+            width: 100px;
+            background-image: linear-gradient(
+                to top,
+                #0d2b2d 0%,
+                #3cbdae 62.7%,
+                #5edccd 100%,
+                rgba(94, 220, 205, 0) 100%
+            );
+            box-shadow: 10px 10px 10px #ccc;
+            font-size: 1.4rem !important;
+            line-height: 1.6rem !important;
+
+            &:hover {
+                background-image: none;
+            }
+        }
+    }
+}

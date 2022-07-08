@@ -67,7 +67,7 @@
 }
 
 #name-header nav button:hover {
-  color: #269587;
   cursor: pointer;
+  text-decoration: underline;
 }
 /*# sourceMappingURL=name-header.css.map */

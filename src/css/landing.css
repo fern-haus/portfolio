@@ -82,8 +82,8 @@
 }
 
 #landing .content-container nav button:hover {
-  color: #ccc;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 700px) {
