@@ -17,7 +17,7 @@ export default function Landing({ setSection }) {
                     id="malachite"
                     alt="cross-section of malachite stone"
                 />
-                <nav>
+                <nav id="sections">
                     <ScrollButton
                         {...{ setSection, id: "blog", text: "Blog" }}
                     />
