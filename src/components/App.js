@@ -9,13 +9,10 @@ import GraphicDesign from "./Portfolio/GraphicDesign";
 export default function App() {
     const [section, setSection] = useState("landing");
 
-    useEffect(
-        () =>
-            document
-                .getElementById(section)
-                .scrollIntoView({ behavior: "smooth" }),
-        [section]
-    );
+    useEffect(() => {
+        const top = document.getElementById(section).offsetTop;
+        window.scrollTo({ top, left: 0, behavior: "smooth" });
+    }, [section]);
 
     return (
         <>
