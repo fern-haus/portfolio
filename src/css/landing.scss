@@ -89,7 +89,9 @@
         align-items: flex-start;
 
         .content-container {
+            height: fit-content;
             width: fit-content;
+            background-color: rgba(255, 255, 255, 0.6);
 
             h1,
             #sections {
@@ -99,7 +101,6 @@
             }
 
             h1 {
-                background-color: rgba(255, 255, 255, 0.6);
                 font-size: 4rem;
                 line-height: 4rem;
                 padding-bottom: 20px;

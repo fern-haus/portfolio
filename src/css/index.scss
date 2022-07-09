@@ -11,6 +11,7 @@ html {
     #landing,
     #blog,
     #portfolio,
+    #graphic-design,
     #about {
         height: 100%;
         box-sizing: border-box;
@@ -31,6 +32,7 @@ html {
 
     #blog,
     #portfolio,
+    #graphic-design,
     #about {
         padding-top: var(--header-height);
         overflow: auto;

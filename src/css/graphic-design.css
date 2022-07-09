@@ -1,0 +1,27 @@
+#graphic-design h1 {
+  text-align: center;
+}
+
+#graphic-design #gallery {
+  max-width: 700px;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  padding: 15px;
+}
+
+#graphic-design #gallery img {
+  height: 120px;
+  width: auto;
+}
+/*# sourceMappingURL=graphic-design.css.map */

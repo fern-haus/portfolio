@@ -11,14 +11,12 @@ export default function About() {
                     alt="selfie of Alec Fernandes wearing a red and black checkered shirt"
                 />
                 <div className="info">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Sollicitudin tempor id eu nisl nunc mi. Donec massa
-                    sapien faucibus et molestie. At volutpat diam ut venenatis
-                    tellus in metus vulputate. A diam sollicitudin tempor id eu
-                    nisl nunc mi. Eget sit amet tellus cras adipiscing enim. Vel
-                    pretium lectus quam id leo in. Consectetur adipiscing elit
-                    duis tristique sollicitudin.
+                    Born in San Diego, Alec has worked as a front-end web
+                    developer in both Southern California and the Bay Area. He
+                    graduated with a B.A. in journalism from San Francisco State
+                    University where he also studied web development as an
+                    online editor. His past employers include start-ups and
+                    small businesses looking to improve their online image.
                 </div>
             </div>
         </div>

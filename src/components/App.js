@@ -4,6 +4,7 @@ import NameHeader from "./NameHeader";
 import Blog from "./Blog";
 import Portfolio from "./Portfolio/Portfolio";
 import About from "./About";
+import GraphicDesign from "./Portfolio/GraphicDesign";
 
 export default function App() {
     const [section, setSection] = useState("landing");
@@ -22,6 +23,7 @@ export default function App() {
             <NameHeader {...{ section, setSection }} />
             <Blog />
             <Portfolio />
+            <GraphicDesign />
             <About />
         </>
     );

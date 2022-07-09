@@ -1,6 +1,7 @@
 import "../css/landing.css";
 import ScrollButton from "./ScrollButton";
 import malachite from "../assets/malachite-transparent.png";
+import { sections } from "./NameHeader";
 
 export default function Landing({ setSection }) {
     return (
@@ -18,15 +19,19 @@ export default function Landing({ setSection }) {
                     alt="cross-section of malachite stone"
                 />
                 <nav id="sections">
-                    <ScrollButton
-                        {...{ setSection, id: "blog", text: "Blog" }}
-                    />
-                    <ScrollButton
-                        {...{ setSection, id: "portfolio", text: "Portfolio" }}
-                    />
-                    <ScrollButton
-                        {...{ setSection, id: "about", text: "About Me" }}
-                    />
+                    {Object.entries(sections).map(
+                        ([id, text]) =>
+                            id !== "landing" && (
+                                <ScrollButton
+                                    {...{
+                                        key: `landing scroll button ${id}`,
+                                        setSection,
+                                        id,
+                                        text,
+                                    }}
+                                />
+                            )
+                    )}
                 </nav>
                 <nav></nav>
             </div>

@@ -9,6 +9,7 @@ html #root,
 html #landing,
 html #blog,
 html #portfolio,
+html #graphic-design,
 html #about {
   height: 100%;
   -webkit-box-sizing: border-box;
@@ -30,6 +31,7 @@ html #root > *:not(#landing):not(#name-header) {
 
 html #blog,
 html #portfolio,
+html #graphic-design,
 html #about {
   padding-top: var(--header-height);
   overflow: auto;
